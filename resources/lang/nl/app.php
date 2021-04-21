@@ -21,4 +21,13 @@ return [
             'dr' => 'Dr.',
         ]
     ],
+    'reservations' => [
+        'title' => 'Reservaties',
+        'fields' => [
+            'room' => 'Kamer',
+            'client' => 'Naam',
+            'dates' => 'Datums',
+            'action' => 'Actie',
+        ],
+    ]
 ];

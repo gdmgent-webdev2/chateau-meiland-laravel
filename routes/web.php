@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Home;
 use App\Http\Controllers\Clients;
+use App\Http\Controllers\Reservations;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,4 +26,10 @@ Route::prefix('clients')
             Route::post('/create', Clients\Create\CreateController::class)->name('create');
             Route::get('/{client}/edit', Clients\Update\ShowUpdateController::class)->name('update');
             Route::post('/{client}/edit', Clients\Update\UpdateController::class)->name('update');
+});
+
+Route::prefix('reservations')
+        ->name('reservations.')
+        ->group(function() {
+           Route::get('/', Reservations\IndexController::class)->name('index');
 });
