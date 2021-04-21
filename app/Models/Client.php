@@ -14,6 +14,6 @@ class Client extends Model
     // protected $guarded = [];
 
     public function getFullNameAttribute() {
-        return "{$this->title} {$this->first_name} {$this->last_name}";
+        return "{$this->first_name} {$this->last_name}";
     }
 }

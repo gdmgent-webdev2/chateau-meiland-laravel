@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers;
+use App\Http\Controllers\Home;
+use App\Http\Controllers\Clients;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,12 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', Controllers\Home\IndexController::class)->name('index');
+Route::get('/', Home\IndexController::class)->name('index');
 
-Route::get('/clients', Controllers\Clients\IndexController::class)->name('clients.index');
-
-Route::get('clients/create', Controllers\Clients\Create\ShowCreateController::class)->name('clients.create');
-Route::post('clients/create', Controllers\Clients\Create\CreateController::class)->name('clients.create');
-
-Route::get('clients/{client}/edit', Controllers\Clients\Update\ShowUpdateController::class)->name('clients.update');
-Route::post('clients/{client}/edit', Controllers\Clients\Update\UpdateController::class)->name('clients.update');
+Route::prefix('clients')
+        ->name('clients.')
+        ->group(function() {
+            Route::get('/', Clients\IndexController::class)->name('index');
+            Route::get('/create', Clients\Create\ShowCreateController::class)->name('create');
+            Route::post('/create', Clients\Create\CreateController::class)->name('create');
+            Route::get('/{client}/edit', Clients\Update\ShowUpdateController::class)->name('update');
+            Route::post('/{client}/edit', Clients\Update\UpdateController::class)->name('update');
+});

@@ -11,7 +11,7 @@ class ClientRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             'title' => 'required|max:4',
@@ -21,8 +21,7 @@ class ClientRequest extends FormRequest
             'postal_code' => 'required|max:255',
             'city' => 'required|max:255',
             'county' => 'required|max:255',
-            'email' => 'required|email',
-            // 'email' => 'required|unique:clients|email',
+            'email' => 'required|unique:clients|email',
         ];
     }
 }
