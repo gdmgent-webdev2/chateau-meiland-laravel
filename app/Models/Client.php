@@ -18,6 +18,6 @@ class Client extends Model
     }
 
     public function getFullNameAttribute() {
-        return "{$this->first_name} {$this->last_name}";
+        return sprintf('%s %s %s', __('app.clients.titles.' . $this->title), $this->first_name, $this->last_name);
     }
 }

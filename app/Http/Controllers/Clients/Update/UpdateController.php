@@ -24,6 +24,6 @@ class UpdateController extends Controller
         $client->save();
 
         // redirect to show clients
-        return redirect()->route('clients.index');
+        return redirect()->route('clients');
     }
 }

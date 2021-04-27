@@ -16,20 +16,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', Home\IndexController::class)->name('index');
+Route::get('/', Home\IndexController::class)->name('home');
 
 Route::prefix('clients')
-        ->name('clients.')
+        ->name('clients')
         ->group(function() {
-            Route::get('/', Clients\IndexController::class)->name('index');
-            Route::get('/create', Clients\Create\ShowCreateController::class)->name('create');
-            Route::post('/create', Clients\Create\CreateController::class)->name('create');
-            Route::get('/{client}/edit', Clients\Update\ShowUpdateController::class)->name('update');
-            Route::post('/{client}/edit', Clients\Update\UpdateController::class)->name('update');
+            Route::get('/', Clients\IndexController::class);
+            Route::get('/create', Clients\Create\ShowCreateController::class)->name('.create');
+            Route::post('/create', Clients\Create\CreateController::class)->name('.create');
+            Route::get('/{client}/edit', Clients\Update\ShowUpdateController::class)->name('.update');
+            Route::post('/{client}/edit', Clients\Update\UpdateController::class)->name('.update');
 });
 
 Route::prefix('reservations')
-        ->name('reservations.')
+        ->name('reservations')
         ->group(function() {
-           Route::get('/', Reservations\IndexController::class)->name('index');
+           Route::get('/', Reservations\IndexController::class);
+
+           Route::get('/create/{client}', Reservations\Create\ShowCreateController::class)->name('.create');
 });

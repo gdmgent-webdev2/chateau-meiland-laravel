@@ -20,11 +20,11 @@
 
                     @foreach ($clients as $client)
                         <tr>
-                            <td>@lang('app.clients.titles.' . $client->title) {{ $client->full_name }}</td>
+                            <td>{{ $client->full_name }}</td>
                             <td>{{ $client->email }}</td>
                             <td>
-                                <a class="hollow button" href="{{ route('clients.update', ['client' => $client->id]) }}">BEWERK</a>
-                                <a class="hollow button warning" href="./reservations_new.html">BOEK EEN KAMER</a>
+                                <a class="hollow button" href="{{ route('clients.update', $client->id) }}">BEWERK</a>
+                                <a class="hollow button warning" href="{{ route('reservations.create', $client->id) }}">BOEK EEN KAMER</a>
                             </td>
                         </tr>
                     @endforeach

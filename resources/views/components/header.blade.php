@@ -3,9 +3,11 @@
     <div class="row">
         <div class="top-bar-left">
             <ul class="dropdown menu" data-dropdown-menu="tckp8q-dropdown-menu" role="menubar">
-                <li role="menuitem"><a href="{{ route('index') }}">@lang('app.header.home')</a></li>
-                <li role="menuitem"><a href="{{ route('clients.index') }}">@lang('app.header.clients')</a></li>
-                <li role="menuitem"><a href="{{ route('reservations.index') }}">@lang('app.header.reservations')</a></li>
+                @foreach(['home', 'clients', 'reservations'] as $route)
+                    <li role="menuitem" class="{{ request()->routeIs($route . '*') ? 'active' : '' }}">
+                        <a href="{{ route($route) }}">@lang('app.header.' . $route)</a>
+                    </li>
+                @endforeach
             </ul>
         </div>
     </div>

@@ -31,5 +31,8 @@ return [
             'dates' => 'Datums',
             'action' => 'Actie',
         ],
+        'create' => [
+            'title' => 'Nieuwe reservatie',
+        ]
     ]
 ];

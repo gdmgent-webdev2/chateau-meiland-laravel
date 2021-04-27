@@ -13,7 +13,7 @@
 
 <body>
 
-@include('components.header')
+<x-header />
 
 <br>
 
