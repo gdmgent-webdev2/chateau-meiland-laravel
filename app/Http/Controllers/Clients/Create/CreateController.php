@@ -20,6 +20,6 @@ class CreateController extends Controller
         Client::create($request->all());
 
         // redirect to show clients
-        return redirect()->to(route('clients.index'));
+        return redirect()->route('clients.index');
     }
 }

@@ -17,13 +17,13 @@ class UpdateController extends Controller
      * @param Client $client
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function __invoke(UpdateClientRequest $request, Client $client)
+    public function __invoke(ClientRequest $request, Client $client)
     {
         // update client
         $client->fill($request->all());
         $client->save();
 
         // redirect to show clients
-        return redirect()->to(route('clients.index'));
+        return redirect()->route('clients.index');
     }
 }

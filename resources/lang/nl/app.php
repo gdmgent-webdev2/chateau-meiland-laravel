@@ -12,6 +12,8 @@ return [
         'fields' => [
             'name' => 'Naam',
             'email' => 'Email',
+            'postal_code' => 'Postcode',
+            'county' => 'Provincie',
             'action' => 'Actie',
         ],
         'titles' => [

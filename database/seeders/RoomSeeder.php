@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Room;
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 
 class RoomSeeder extends Seeder
@@ -14,11 +15,12 @@ class RoomSeeder extends Seeder
      */
     public function run()
     {
-        $rooms = ['101', '102', '201', '202'];
+        $faker = Factory::create();
 
-        foreach ($rooms as $room) {
+        for ($i = 0; $i < 10; $i++) {
             Room::create([
-                'name' => $room
+                'number' => $faker->numberBetween(100, 299),
+                'name' => $faker->company,
             ]);
         }
     }
