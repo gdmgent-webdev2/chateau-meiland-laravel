@@ -24,12 +24,14 @@ return [
         ]
     ],
     'reservations' => [
-        'title' => 'Reservaties',
+        'title' => 'Toekomstige reservaties',
         'fields' => [
             'room' => 'Kamer',
             'client' => 'Naam',
             'dates' => 'Datums',
             'action' => 'Actie',
+            'end_date' => 'Eind datum',
+            'start_date' => 'Start datum',
         ],
         'create' => [
             'title' => 'Nieuwe reservatie',

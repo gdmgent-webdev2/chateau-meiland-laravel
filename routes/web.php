@@ -33,5 +33,9 @@ Route::prefix('reservations')
         ->group(function() {
            Route::get('/', Reservations\IndexController::class);
 
-           Route::get('/create/{client}', Reservations\Create\ShowCreateController::class)->name('.create');
+           Route::get('/create/{client}', Reservations\Create\ShowCreateController::class)->name('.create.client');
+
+           Route::post('/create', Reservations\Create\CreateController::class)->name('.create');
+
+           Route::delete('/{reservation}', Reservations\Delete\DeleteController::class)->name('.delete');
 });

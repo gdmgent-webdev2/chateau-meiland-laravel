@@ -24,7 +24,7 @@
                             <td>{{ $client->email }}</td>
                             <td>
                                 <a class="hollow button" href="{{ route('clients.update', $client->id) }}">BEWERK</a>
-                                <a class="hollow button warning" href="{{ route('reservations.create', $client->id) }}">BOEK EEN KAMER</a>
+                                <a class="hollow button warning" href="{{ route('reservations.create.client', $client->id) }}">BOEK EEN KAMER</a>
                             </td>
                         </tr>
                     @endforeach

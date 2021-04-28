@@ -22,8 +22,14 @@
                     <tr>
                         <td>{{ $reservation->room->name }}</td>
                         <td>{{ $reservation->client->full_name }}</td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ $reservation->start_date->format('d/m/Y') }} → {{ $reservation->end_date->format('d/m/Y') }}</td>
+                        <td>
+                            <form method="POST" action="{{ route('reservations.delete', $reservation->id) }}">
+                                @method("DELETE")
+                                @csrf
+                                <button type="submit" class="button alert">Verwijderen</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
 
