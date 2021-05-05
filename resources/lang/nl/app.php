@@ -5,6 +5,16 @@ return [
         'home' => 'Home',
         'clients' => 'Klanten',
         'reservations' => 'Reservaties',
+        'rooms' => 'Kamers',
+    ],
+    'rooms' => [
+        'title' => 'Kamers',
+        'add' => 'Kamer toevoegen',
+        'fields' => [
+            'name' => 'Naam',
+            'number' => 'Nummer',
+            'action' => 'Actie',
+        ],
     ],
     'clients' => [
         'title' => 'Klanten',

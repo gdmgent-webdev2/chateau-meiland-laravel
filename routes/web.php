@@ -3,6 +3,7 @@
 use App\Http\Controllers\Home;
 use App\Http\Controllers\Clients;
 use App\Http\Controllers\Reservations;
+use App\Http\Controllers\Rooms;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,3 +40,17 @@ Route::prefix('reservations')
 
            Route::delete('/{reservation}', Reservations\Delete\DeleteController::class)->name('.delete');
 });
+
+Route::prefix('rooms')
+        ->name('rooms')
+        ->group(function() {
+            Route::get('/', Rooms\IndexController::class);
+
+            Route::get('/create', Rooms\Create\ShowCreateController::class)->name('.create');
+            Route::post('/create', Rooms\Create\CreateController::class)->name('.create');
+
+            Route::get('/{room}/edit', Rooms\Update\ShowUpdateController::class)->name('.update');
+            Route::post('/{room}/edit', Rooms\Update\UpdateController::class)->name('.update');
+
+            Route::delete('/{room}', Rooms\Delete\DeleteController::class)->name('.delete');
+        });

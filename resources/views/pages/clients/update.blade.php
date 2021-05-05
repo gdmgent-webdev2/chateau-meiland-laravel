@@ -8,7 +8,7 @@
             <h4>Klant aanpassen</h4>
 
             @include('pages.clients.form', [
-               'action' => route('clients.update', ['client' => $client->id]),
+               'action' => route('clients.update', $client->id),
                'label' => 'Aanpassen',
                'client' => $client,
            ])
